@@ -1,0 +1,23 @@
+function extraInit(){
+  const allPrices = document.querySelectorAll('.offer-price-value')
+
+  allPrices.forEach(price => {
+    const priceValue = price.childNodes[1].nodeValue.trim().replace(/\s+/g, '')
+
+    if(Number(priceValue) < 10000){
+      price.childNodes[1].nodeValue = price.childNodes[1].nodeValue.trim().replace(/\s+/g, '')
+    }else{
+      return
+    }
+  })
+
+const offers = document.querySelectorAll('.vertical  .offer-container');
+
+offers.forEach(offer => {
+  const computedStyle = window.getComputedStyle(offer);
+  const currentHeight = parseFloat(computedStyle.height); 
+  const newHeightValue = currentHeight - 4;
+  offer.style.height = `${newHeightValue}px`;
+})
+
+}

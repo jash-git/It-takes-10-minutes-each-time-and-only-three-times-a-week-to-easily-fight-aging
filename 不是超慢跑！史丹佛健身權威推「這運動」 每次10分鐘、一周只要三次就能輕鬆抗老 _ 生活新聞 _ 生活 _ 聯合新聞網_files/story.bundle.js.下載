@@ -1,0 +1,307 @@
+!function(){var e,t,n,i,o={1315:function(e,t,n){"use strict";n.d(t,{t:function(){return o}});var i=n(5015);let o={};["subMenu","idlePage","feature","more","temperature","weatherForecast","follow","collection","likeNews","discuss","vote","voteActCode","paywall_article","getMbrAccount","pv"].forEach((e=>{Object.defineProperty(o,e,{get:function(){return`${i.API_PREFIX}/${e.toLowerCase()}`}})})),o.geocode="https://maps.googleapis.com/maps/api/geocode/json",o.geoCodeGov="https://api.nlsc.gov.tw/other/TownVillagePointQuery",o.voteFunc="/funcap/vote/voteIndexJson.jsp",o.tagEvent="/eventCollect/clickEvent",o.votePost="/funcap/vote/votingJson.jsp",o.voteMore="/funcap/vote/voteMoreNewsJson.jsp",o.discussFunc="/funcap/discuss/disListJson.jsp",o.discussPost="/funcap/discuss/disAddJson.jsp",o.myPage="/mypage",o.gamelive="/uapi/gamelive",o.dddRecommendation="https://udn-hybrid-rec-dot-ddd-model-gap.df.r.appspot.com/recommendation",o.dddImpression="https://rec-logs-dot-ddd-model-gap.appspot.com/logs/impression",o.dddClick="https://rec-logs-dot-ddd-model-gap.appspot.com/logs/click",o.common="/common2",o.weatherForecastLab="/weather/api/weatherforecast",o.temperatureLab="/weather/api/temperature"},5015:function(e,t,n){"use strict";n.r(t),n.d(t,{API_PREFIX:function(){return p},BREAK_POINT:function(){return $},CALENDAR_ROUTE_PREFIX:function(){return c},CENTER_URL:function(){return v},COOKIES:function(){return y},FB_API_VERSION:function(){return f},IDLE:function(){return E},IS_VIP:function(){return g},MENU_LENGTH_BREAKPOINT:function(){return x},MYPAGE_ROUTE:function(){return u},RECOMMENDATION_LIFESPAN_IN_MINUTE:function(){return b},RECOMMENDATION_LISTS_TOTAL:function(){return w},SEARCH_ROUTE_PREFIX:function(){return m},SHUFFLE_ALGORITHM:function(){return _},STORAGE_DDD:function(){return r},STORAGE_LOCATION:function(){return a},STORAGE_MENU:function(){return o},STORAGE_TEXT:function(){return s},VIP_ID:function(){return h},VOTE_ROUTE_PREFIX:function(){return d},WEATHER_ROUTE_PREFIX:function(){return l}});const i="udn:",o=`${i}menu`,s=`${i}text`,r=`${i}recommendation`,a=`${i}location`,c="/news/archive",l="/weather",d="/func/vote/",u="/mypage/mynewsCustomize",m="/search/word/2/",p="/api",f="v5.0",h=120882,g=e=>parseInt(e)===h||8799===parseInt(e),y={member:"udnland",avatar:"udnavatar",login:"udngold",nickname:"nickname",um2:"um2",oldMember:"udnmember"},v="https://member.udn.com/member/center.jsp?hold=y",b=15,w=24,_=!0,E={wait:3e5,state:!0,interactionInterval:15e3},$={initial:1297,desktop:1023,tablet:767},x={initial:22,desktop:15,tablet:10,mobile:50}},9008:function(e,t,n){"use strict";n.d(t,{Lr:function(){return h},W5:function(){return u},gV:function(){return m},o4:function(){return p}});var i=n(2299),o=n.n(i),s=n(6979),r=n(8221),a=n(9776),c=n(9841),l=(n(3503),n(8172)),d=n(5015);n(1315);function u(e="login"){let t=(0,a.Ri)(d.COOKIES[e]);return"undefined"!==t&&(t||!1)}function m(e="login"){return!!u(e)||(l.A.confirm({title:"會員限定",message:"請登入會員～"},(()=>{window.location.href=(0,a.Rj)()})),!1)}function p(){return o().get(d.COOKIES.member)}function f(){const e=o().get(d.COOKIES.avatar)||"https://g.udn.com.tw/community/img/user_all/myimage/noface.gif",t=document.querySelector(".member-button"),n=document.querySelector(".site-product__link--member");let i;u()?(t.querySelector("i").style.backgroundImage=`url(${e})`,t.classList.add("member-button--islogin"),t.setAttribute("title","會員資料"),t.addEventListener("click",(()=>{if(t.setAttribute("aria-pressed",("true"!==t.getAttribute("aria-pressed")).toString()),document.body.classList.contains("dropdown--open"))return document.body.classList.remove("dropdown--open"),void i.destroy();document.body.classList.add("dropdown--open"),function(e){const t=document.getElementById("memberDropdown");(0,s.rD)(e,t,{placement:"bottom",middleware:[(0,r.cY)(10)]}).then((({x:e,y:n})=>{Object.assign(t.style,{left:`${e}px`,top:`${n}px`})}))}(t),i=(0,c.A)({parentClassName:"member-button",callback:()=>{document.body.classList.remove("dropdown--open")}}),i.register()}))):(t.classList.remove("member-button--islogin"),t.setAttribute("title","登入"),o().remove(d.COOKIES.member),o().remove(d.COOKIES.avatar),o().remove(d.COOKIES.login),o().remove(d.COOKIES.oldMember),o().remove(d.COOKIES.nickname),t.addEventListener("click",(()=>{window.location.href=(0,a.Rj)()}))),n&&n.setAttribute("href",u()?d.CENTER_URL:"https://member.udn.com")}function h(){const e=document.querySelector(".member-button");f(),e.classList.remove("member-button--isloading")}window.Cookies=o()},2351:function(){const e=document.querySelector(".classification-18"),t="classification-open";e&&function(){document.querySelector(".udn-overlay")||function(){!function(){const e=`.udn-overlay { \n    width: 100vw;\n    height: 100vh;\n    background: rgba(0,0,0,0.97);\n    position: fixed;\n    top: 0;\n    left: 0;\n    visibility: hidden;\n    opacity: 0;\n    z-index: 9998;\n    transition: visibility 0.3s linear, opacity 0.3s linear;\n   } \n   .${t} .udn-overlay {\n      visibility: visible;\n      opacity: 1;\n   }`,n=document.head||document.getElementsByTagName("head")[0],i=document.createElement("style");i.type="text/css",i.appendChild(document.createTextNode(e)),n.appendChild(i)}();const e=document.createElement("div");e.className="udn-overlay",document.body.appendChild(e)}();document.body.classList.add(t),function(){const e=document.createElement("section"),n=document.createElement("span"),i=document.createElement("span"),o=document.createElement("picture"),s=()=>window.matchMedia("(max-width: 768px)").matches?{wrapper:"\n          width: 100%;\n          max-width: 486px;",btn:"\n          height: 58px;\n          background-position: center bottom;\n          margin: 5px 0;\n        "}:{wrapper:"\n          width: 486px;\n          height: 486px;",btn:"\n          height: 133px;\n          background-position: center; \n      "};e.classList.add("classification-wrapper"),e.style.cssText=`\n    position: fixed;\n    top: 50%;\n    left: 50%;\n\n    -webkit-transform: translate(-50%, -50%);\n    transform: translate(-50%, -50%);\n    z-index: 12;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -ms-flex-flow: row wrap;\n    flex-flow: row wrap;\n    -ms-flex-pack: distribute;\n    justify-content: space-around;\n    ${s().wrapper}\n    `,n.style.cssText=`\n    display: inline-block;\n    width: 231px;\n    background-image: url('/static/img/misc/18-failed.svg');\n    background-repeat: no-repeat;\n    background-size: cover;\n    cursor: pointer;\n    image-rendering: pixelated;\n    ${s().btn}\n  `,i.style.cssText=`\n    display: inline-block;\n    width: 231px;\n    background-image: url('/static/img/misc/18-passed.svg'); \n    background-repeat: no-repeat;\n    background-size: cover;\n    cursor: pointer;\n    image-rendering: pixelated;\n    ${s().btn}\n  `,o.innerHTML='\n    <source \n      srcset="/static/img/misc/18+.webp" type="image/webp"\n    >\n    <source \n      srcset="/static/img/misc/18+.png" type="image/png"\n    >\n    <img style="max-width: 100%; width: 100%; " src="/static/img/misc/18+.png" loading="lazy" alt="">\n  ',e.appendChild(n),e.appendChild(i),e.appendChild(o),n.addEventListener("click",(e=>{e.preventDefault(),window.location.href="/"})),i.addEventListener("click",(n=>{n.preventDefault(),document.body.classList.remove(t),e.parentNode.removeChild(e)})),document.body.appendChild(e)}()}()},581:function(e,t,n){"use strict";n.d(t,{He:function(){return c},X9:function(){return u},fy:function(){return l},xs:function(){return d}});var i=n(1315),o=n(9776),s=n(3503),r=n(8172),a=n(9966);function c(e,t){r.A.confirm({title:"警告",message:"確認移除收藏？"},(async()=>{if(await l(t)()){let t=e.target.closest(".story-list__news");(0,o.pE)(t)}}))}function l(e=o.$5.getter("property","og:url")){return async()=>{try{let{error:t,del:n}=await(0,s.J4)(i.t.myPage+"/sdelete",{u:e},{});return"true"===n?(a.A.showNotification({title:"完成",message:"已移除收藏",nType:"success"}),!0):(a.A.showNotification({title:"錯誤",message:t}),!1)}catch(e){return!1}return!1}}async function d(){let e=o.$5.getter("property","og:url");try{let{save:t,error:n}=await(0,s.J4)(i.t.myPage+"/art",{u:encodeURIComponent(e)},{});return"true"===t}catch(e){return!1}return!1}async function u(){let e=o.$5.getter("property","og:url"),t=o.$5.getter("property","og:image"),n=o.$5.getter("property","og:title"),r=o.$5.getter("property","og:description"),c=o.$5.getter("name","date.available"),l=new URL(t),d="pgw.udn.com.tw"===l.host?l.searchParams.get("u"):t;try{let{save:t,error:o}=await(0,s.J4)(i.t.myPage+"/sv",{i:encodeURIComponent(d),u:encodeURIComponent(e),t:encodeURIComponent(encodeURIComponent(n)),d:encodeURIComponent(encodeURIComponent(r)),te:c},{});return"true"===t?(a.A.showNotification({title:"完成",message:"收藏成功",nType:"success"}),!0):(a.A.showNotification({title:"錯誤",message:o}),!1)}catch(e){return!1}return!1}},2092:function(e,t,n){"use strict";n.d(t,{$:function(){return h},l:function(){return f}});var i=n(8257),o=n(1315),s=n(5015),r=n(9008),a=n(3503),c=n(9776),l=n(9841),d=n(6613);let u,m;async function p(){if(!u){const e=await n.e(518).then(n.t.bind(n,1967,23));u=e.default}}async function f(e){const t=(0,c.es)();await p();const n=localStorage.getItem(s.STORAGE_DDD);if(!n)return;let{rule:i}=u.parse(n);await(0,a.pl)(o.t.dddClick,{ga_id:(0,c.X0)(),pid:e,timestamp:(new Date).getTime(),url:c.$5.getter("property","og:url"),screen_size:`${t.width}x${t.height}`,rule:i},"POST",{credentials:"include"})}async function h(e){await p();let t=e.target;const n=u.parse(t.dataset.settings),o=n.subscriptionId,r=n.subscriptionType,a=n.subscriptionSite;let c="false";if(!await d.A.start())return;if(m&&m.destroy(),m=(0,l.A)({parentClassName:"feature-guess__list",callback:()=>{document.querySelector(".feature-guess__dialog")&&document.querySelector(".feature-guess__dialog").remove()}}),o){let{me:e}=await(0,i.iG)({site:a,id:o,type:r});c=e}let f=function({title:e,id:t,lists:n,type:o,site:r,isFollow:a,root:c}){const l=document.createElement("div");l.className="feature-guess__dialog show";const d=document.createElement("h4");d.className="follow-tag text-orange";const u=document.createElement("span");if(u.className="follow-tag__title",u.textContent=void 0!==e?e:"個人化",d.appendChild(u),void 0!==e){const n=document.createElement("span");n.className="btn btn-follow","true"===a&&n.classList.add("subscribed"),n.tabIndex=-1,n.setAttribute("role","button"),n.setAttribute("aria-label","follow"),n.setAttribute("data-id",t),n.setAttribute("data-type",o),n.setAttribute("data-site",r),n.setAttribute("title",`${e}`),n.addEventListener("click",i.wd),n.textContent="追蹤",d.appendChild(n)}l.appendChild(d);const m=document.createElement("div");m.className="interest-lists",n.forEach((e=>{m.appendChild(function({title:e,type:t,id:n,site:i},o){const s=document.createElement("span");s.className="interest",s.dataset.id=n,s.dataset.type=t,s.innerHTML=`對 <span class="text-black"> ${e} </span> 沒興趣`;const r=document.createElement("i");return r.className="i-hide",s.prepend(r),s.addEventListener("click",g({title:e,type:t,id:n,site:i},o)),s}(e,t))}));const p=document.createElement("div");p.className="dialog-actions";const f=document.createElement("a");f.className="btn",f.href=s.MYPAGE_ROUTE,f.textContent="喜好管理";const h=document.createElement("span");return h.className="btn interest-close",h.setAttribute("role","button"),h.setAttribute("aria-label","close dialog"),h.textContent="關閉",h.addEventListener("click",(e=>{c.destroy()})),p.appendChild(f),p.appendChild(h),l.appendChild(m),l.appendChild(p),l}({title:n.subscriptionText,id:o,site:a,type:r,isFollow:c,lists:n.interest,root:m});t.parentNode.parentNode.appendChild(f),m.register(),f.scrollIntoView({behavior:"smooth",block:"center"})}function g({title:e,type:t,id:n,site:i},s){return async function(c){if(!(0,r.gV)())return;let l=c.target.parentNode.closest(".feature-guess__list").querySelector(".btn-setting");this.classList.add("hide");const d=u.parse(l.dataset.settings);d.subscriptionId===s&&(d.interest=d.interest.filter((t=>t.title!==e)),l.dataset.settings=u.stringify(d));try{await(0,a.J4)(o.t.myPage+"/myact",{i:n,t:t,s:i,a:"dislike"},{})&&(this.removeEventListener("click",g),setTimeout((()=>{this.parentNode.removeChild(this)}),1e3))}catch(e){}}}},8257:function(e,t,n){"use strict";n.d(t,{iG:function(){return f},jq:function(){return h},wd:function(){return u}});var i=n(1315),o=n(6613),s=n(9008),r=n(9776),a=n(3503),c=n(8172),l=n(9966);let d=!1;async function u(e){if(e.preventDefault(),!await o.A.start())return;if(d)return;if(!(0,s.gV)())return;let t=e.target.dataset.id,n=e.target.dataset.type,l=e.target.title,f=e.target.dataset.site,h=e.target.classList.contains("subscribed");if(!t||!n)return;if(d=!0,(0,r.Kx)(e.target,"mynews-follow"))return void async function({e:e,id:t,tagText:n,type:o,site:s}){const r=e.target.classList.contains("subscribed");let l=document.querySelector(`.btn-follow[data-id="${t}"]`),f=r?"/mdelete":"/fm";if(!o)return void(d=!1);try{let{del:h,save:g,error:y}=await(0,a.J4)(i.t.myPage+f,{me:t,type:o,s:s},{});if("true"!==h&&"true"!==g)return c.A.alert({title:"錯誤",message:y}),void(d=!1);if("channel"===o||"class"===o||"cate"===o)r?(p({e:e,tagText:n}),e.target.closest(".mynews-follow__channel").classList.remove("subscribed")):(m({e:e,tagText:n}),e.target.closest(".mynews-follow__channel").classList.add("subscribed"));else if(r)p({e:e,tagText:n}),l.removeEventListener("click",u),l.closest(".mynews-follow__content").remove();else{m({e:e,tagText:n});let t=l.closest(".mynews-follow__content").cloneNode(!0),i=t.querySelector(".btn-follow"),o=document.querySelector('.mynews-follow__wrapper[data-holder="content"]');i.classList.add("subscribed"),i.addEventListener("click",u),o.appendChild(t),l.closest(".mynews-follow__content").remove()}}catch(e){c.A.alert({title:"錯誤",message:e})}d=!1}({e:e,id:t,type:n,tagText:l,site:f});let g=h?"/mdelete":"/fm";try{let{del:o,save:s,error:r}=await(0,a.J4)(i.t.myPage+g,{me:t,type:n,s:f},{});if("true"!==o&&"true"!==s)return c.A.alert({title:"錯誤",message:r}),void(d=!1);h?p({e:e,tagText:l}):m({e:e,tagText:l})}catch(e){c.A.alert({title:"錯誤",message:e})}d=!1}function m({e:e,tagText:t}){e.target.classList.add("subscribed"),l.A.showNotification({title:"完成",message:`已追蹤 ${t}，未來可至<a href="https://udn.com/mypage/mynewsCustomize">我的新聞</a>閱讀`,nType:"success"})}function p({e:e,tagText:t}){e.target.classList.remove("subscribed"),l.A.showNotification({title:"完成",message:`已取消追蹤 ${t}`,nType:"success"})}async function f({site:e,id:t,type:n}){try{return await(0,a.J4)(i.t.myPage+"/me",{s:e,me:t,type:n},{credentials:"include"})}catch(e){return{error:e,me:"false"}}}async function h(e){let{result:t}=await async function(e){try{return await(0,a.J4)(i.t.myPage+"/mes",{ms:encodeURIComponent(JSON.stringify({data:e}))},{credentials:"include"})}catch(e){return{error:e,result:""}}}(e);t&&t.forEach((({me:e,s:t,type:n})=>{const i=document.querySelector(`.btn-follow[data-id="${e}"][data-site="${t}"][data-type="${n}"]`);i&&i.classList.add("subscribed")}))}},9706:function(e,t,n){"use strict";var i=n(5836),o=n.n(i),s=n(9966);o().register({request:function(e,t){if(t&&("PATCH"===t.method||"DELETE"===t.method)){const e={...t.headers};e.Accept="application/json",e["Content-Type"]="application/json",t.headers=e}const n={...t},i=document.querySelector("[data-root-api]");return i&&(e=i.getAttribute("data-root-api")+e),[e,n]},requestError:function(e){return Promise.reject(e)},response:function(e){return e},responseError:function(e){return Promise.reject(e)}});var r=n(9776),a=n(5015);const c=r.$5.getter("property","fb:app_id");var l,d,u,m,p;window.fbAsyncInit=function(){FB.init({appId:c,xfbml:!0,version:a.FB_API_VERSION})},l=document,d="script",u="facebook-jssdk",p=l.getElementsByTagName(d)[0],l.getElementById(u)||((m=l.createElement(d)).id=u,m.src=`//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=${a.FB_API_VERSION}&appId=${c}`,p.parentNode.insertBefore(m,p));var f=n(9008),h=n(8257),g=n(1315),y=n(3503),v=n(8856),b=n(2831);const w=document.querySelector(".udn-idle"),_=["mousemove","click","scroll","keydown"];let E=null,$=null,x=!1;class C{constructor(e,t){this.cleared=!1,this.id=setTimeout(e,t)}clear(){this.cleared=!0,clearTimeout(this.id)}}function L(e){"udn-idle"===e.target.className&&(w.removeEventListener("click",L),k())}function A(){$&&$.clear(),$=new C((()=>{!async function(){if(!(window.innerWidth<a.BREAK_POINT.tablet)){S(),O();try{x=!0;let e=await(0,y.J4)(g.t.idlePage);await(0,v.FL)(e,w,k,(0,r.pM)()),b.A.setClass("idle-open"),w.addEventListener("click",L),googletag.pubads&&!(0,r.pM)()&&e.ads.length&&e.ads.forEach(((e,t)=>{googletag.pubads().refresh([window[`idle_slot${t+1}`]])}))}catch(e){x=!1,k()}}}()}),a.IDLE.interactionInterval),_.forEach((e=>{window.addEventListener(e,I,!1)}))}function k(){b.A.removeClass("idle-open"),x=!1,I()}function S(){$&&$.clear(),E&&E.clear()}function I(){x?E.clear():(S(),O(),E=new C(A,a.IDLE.wait))}function O(){_.forEach((e=>{window.removeEventListener(e,I,!1)}))}n(2299);const T=document.querySelectorAll(".context-box--collapsable"),N=document.getElementById("gotop"),P=document.querySelectorAll(".btn-follow"),j=document.querySelector(".udn-overlay");document.querySelector(".wrapper-aside");if((0,f.Lr)(),N.addEventListener("click",(e=>{e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})),[...P].forEach((async e=>{e.addEventListener("click",h.wd)})),P.length){let Ce=[...P].map((e=>{let{id:t,site:n,type:i}=e.dataset;return{me:t.toString(),s:n.toString(),type:i}}));(0,f.W5)()&&(0,h.jq)(Ce)}let R;j&&j.addEventListener("click",(e=>{e.preventDefault(),b.A.removeAllClasses()})),window.innerWidth>a.BREAK_POINT.desktop&&a.IDLE.state&&(E=new C(A,a.IDLE.wait)),[...T].forEach((e=>{e.querySelector(".context-box__header").addEventListener("click",(t=>{t.preventDefault(),t.stopImmediatePropagation();const n=e.classList.contains("hide");let i=e.querySelector(".btn-collapse");i.setAttribute("aria-expanded",n),i.textContent=n?"關閉":"展開",e.classList.toggle("hide")}))}));const q=document.querySelector(".navigation"),D=document.querySelector(".custom-menu"),M=document.getElementById("setMenu"),U=document.getElementById("resetMenu"),B=document.querySelector(".custom-menu--button__holder"),F=document.querySelector(".custom-menu--main .custom-menu--button__holder"),J=document.querySelector(".navigation-toggler"),K=(document.querySelector(".navigation-wrapper"),document.getElementById("customize"));let H,G=localStorage.getItem(a.STORAGE_MENU),V=!1,X=!1;try{G?Q(JSON.parse(G)):Q()}catch(Le){}function z(e){let t=document.querySelectorAll(".custom-menu--button");X=e,e?(D.classList.add("is-editing"),H=new R(document.querySelectorAll(".custom-menu--button__holder"),{draggable:".custom-menu--button"}),H.on("sortable:start",(()=>{V=!0,M.classList.remove("disabled"),B.classList.add("drop-active")})),H.on("sortable:stop",(()=>{B.classList.remove("drop-active")})),[...t].forEach((e=>e.addEventListener("click",Y)))):W()}function W(){X=!1;let e=document.querySelectorAll(".custom-menu--button");D.classList.remove("is-editing"),[...e].forEach((e=>e.removeEventListener("click",Y))),H&&H.destroy()}function Y(e){e.preventDefault()}function Q(e=window.__UDN__.initialMenu){e.hasOwnProperty("selected")||(e=window.__UDN__.initialMenu),te(e.selected),ee(e.selected)}function Z(e){const t=Object.assign([],window.__UDN__.initialMenu.selected);let n=Object.assign([],e).map((e=>t.find((t=>t.id===e.id)))).filter(Boolean);if(Set){const e=new Set;n=n.filter((t=>{const n=e.has(t.id);return e.add(t.id),!n}))}const i=t.filter(function(e,t="id"){return n=>0==e.filter((e=>e[t]==n[t])).length}(n));return[...n,...i]}function ee(e=[...window.__UDN__.initialMenu.selected]){const t=Object.assign({},window.__UDN__.initialMenu),n=Z(e);[...document.querySelectorAll(".custom-menu--button__holder")].forEach((e=>{for(;e.firstChild;)e.firstChild.parentNode.removeChild(e.firstChild)})),t.fixed.map((e=>{F.appendChild(ne(e,!0))})),t.mobile&&t.mobile.map((e=>{F.appendChild(ne(e,!0,"custom-menu--mobile"))})),n.map((e=>{F.appendChild(ne(e))})),t.shopping&&F.appendChild(ne(t.shopping,!0)),t.ads.map((e=>{F.appendChild(ne(e,!0,"custom-menu--sales"))}))}async function te(e=[...window.__UDN__.initialMenu.selected]){const t=Object.assign({},window.__UDN__.initialMenu);let n=[Z(e),[]];await(0,v.QY)({endMenu:t.shopping,fixed:t.fixed,mobile:t.mobile,menu:n,ads:t.ads,current:t.current},q)}function ne(e,t=!1,n=""){let i=document.createElement("a");return i.className="btn btn-border btn-border--blue custom-menu--button "+n,t&&(i.classList.add("custom-menu--button-disabled"),i.classList.add("disabled")),e.hasOwnProperty("id")&&(i.dataset.id=e.id),i.href=e.href,i.innerText=e.title,i}K.addEventListener("click",(e=>{z(!0)})),J.addEventListener("click",(async e=>{if(e.preventDefault(),!H&&!(0,r.RX)()){const{Sortable:e}=await n.e(587).then(n.bind(n,7345));R=e}b.A.setClasses(["menu-open","custom"])})),M.addEventListener("click",(async e=>{if(e.preventDefault(),!X)return;if(!V)return void z(!1);let t={selected:[...document.querySelectorAll(".custom-menu--button__holder .custom-menu--button:not(.custom-menu--button-disabled)")].map((({dataset:e,innerText:t})=>({id:e.id,title:t,href:e.href}))),fixed:window.__UDN__.initialMenu.fixed,version:window.__UDN__.initialMenu.version};localStorage.setItem(a.STORAGE_MENU,JSON.stringify(t)),await Q(t),z(!1),M.classList.add("disabled")})),U.addEventListener("click",(e=>{e.preventDefault(),M.classList.remove("disabled"),V=!1,localStorage.removeItem(a.STORAGE_MENU),te(),ee(),W()}));const ie=document.querySelectorAll(".menu-toggler"),oe=document.querySelectorAll(".overlay-menu .close-btn"),se=document.querySelectorAll('.input-holder[role="search"] input'),re=document.querySelectorAll(".btn-search");(0,r.y0)();if(window.innerWidth>a.BREAK_POINT.desktop){async function Ae(){await n.e(802).then(n.bind(n,3708))}Ae()}function ae(e){let t=e.target,n="input"===t.tagName.toLowerCase()?t.value:t.closest(".input-holder").querySelector("input").value;""!==n.trim()&&(window.location.href=a.SEARCH_ROUTE_PREFIX+encodeURIComponent(n))}[...ie].forEach((e=>{e.addEventListener("click",(t=>{t.preventDefault();let n="true"===e.getAttribute("aria-pressed");e.setAttribute("aria-pressed",!n),b.A.setClasses(["menu-open","full"]),document.querySelector(".overlay-menu .input-holder input").focus()}))})),[...oe].forEach((e=>{e.addEventListener("click",(e=>{e.preventDefault(),[...ie].forEach((e=>e.setAttribute("aria-pressed","false"))),b.A.removeAllClasses()}))})),[...re].forEach((e=>{e.addEventListener("click",ae)})),[...se].forEach((e=>{e.addEventListener("keyup",(e=>{13===e.keyCode&&ae(e)}))})),window.addEventListener("scroll",(e=>{(0,r.Kt)()>=window.__UDN__.menuTop?(document.body.classList.add("menu-stick"),document.getElementById("gotop").classList.add("show")):(document.body.classList.remove("menu-stick"),document.getElementById("gotop").classList.remove("show"))}));var ce=n(9841),le=n(4099);const de=document.querySelectorAll(".btn-more--news");let ue={};[...de].forEach(((e,t)=>{const n=e.dataset.type+"-"+t;let i=(0,le.Ay)(e,le.nY);n&&(ue[n]=[]),e.addEventListener("click",(async n=>{const{page:o,query:a,type:c}=n.target.dataset,l=c+"-"+t;let d=JSON.parse(a.replace(/'/g,'"'));if(o&&l&&!i.isLoading&&!i.isEnd){i.dispatchAction(le.F5);try{const{lists:t,end:a,page:u,state:m,message:p}=await async function(e,t,n){const{lists:i,end:o,page:s,state:a,message:c}=await(0,y.J4)(g.t.more,{page:e,channelId:r.$5.getter("name","channel_id"),type:t,...n});return{lists:i,end:o,page:s,state:a,message:c}}(parseInt(o)+1,c,d);if(!m)return i.dispatchAction(le.ff),void s.A.showNotification({title:"錯誤",message:p});const f=e.closest(".more-news").querySelector(".story-list__holder--append");if(ue[l]=[...ue[l],...t],(await(0,v.zE)(ue[l],f))(),n.target.dataset.page=parseInt(u)||parseInt(o)+1,a)return void i.dispatchAction(le.BL);i.dispatchAction(le.nY)}catch(e){i.dispatchAction(le.ff),s.A.showNotification({title:"錯誤",message:"看更多模組錯誤"})}}}))}));n(2351);const me=document.querySelector(".follow-more"),pe=document.querySelector(".follow-tags__holder"),fe=document.querySelectorAll(".article-content__abbr__text"),he=document.querySelector(".discuss-board "),ge=document.querySelector(".feature-guess"),ye=document.getElementById("customAudio"),ve=document.querySelector(".timeline-aside"),be=document.querySelectorAll(".udn-gallery"),we=document.querySelector(".article-content__social"),_e=document.querySelector(".article-content__wrapper"),Ee=document.querySelector("#udn-tab"),$e=document.getElementById("udnVote"),xe=document.querySelector('#game_content[app-id="baseball-game"]');if([...document.querySelectorAll(".btn-keyword")].forEach((e=>{e.addEventListener("click",(async e=>{e.preventDefault();let t=e.target.href;try{let t=e.target.dataset.rel;await fetch(g.t.tagEvent+t)}catch(e){}finally{window.location.href=t}}))})),me){let ke=(0,ce.A)({parentClassName:"follow-tags__holder",callback:()=>{pe.classList.remove("tags-open")}});me.addEventListener("click",(e=>{e.preventDefault(),pe.classList.toggle("tags-open"),ke.register()})),pe.querySelector(".btn-close").addEventListener("click",(e=>{e.preventDefault(),ke.destroy()}))}if(_e){let Se=_e.dataset.pv;Se&&fetch(Se,{credentials:"include"})}if(ge&&async function(){await n.e(379).then(n.bind(n,2471))}(),ye&&async function(){await n.e(927).then(n.bind(n,2813))}(),ve&&async function(){await n.e(742).then(n.t.bind(n,9930,23))}(),be&&async function(){let{galleryInit:e}=await n.e(315).then(n.bind(n,6696));e()}(),he&&"IntersectionObserver"in window){const Ie=new IntersectionObserver((async(e,t)=>{e[0].isIntersecting&&(!async function(){await n.e(719).then(n.bind(n,7395))}(),Ie.disconnect())}));Ie.observe(he)}we&&async function(){await n.e(745).then(n.bind(n,2881))}(),Ee&&async function(){const{default:e}=await Promise.all([n.e(630),n.e(760)]).then(n.bind(n,8655));e()}(),xe&&async function(){await Promise.all([n.e(630),n.e(195)]).then(n.bind(n,8743))}(),$e&&async function(e,t){let{vueVote:i}=await Promise.all([n.e(630),n.e(251)]).then(n.bind(n,5054));i(e,t)}($e.dataset.id,$e.dataset.sitekey),[...fe].forEach((e=>{e.addEventListener("click",(function(e){e.stopImmediatePropagation(),e.stopPropagation(),e.currentTarget.closest(".article-content__abbr").classList.toggle("show")}))}))},8172:function(e,t,n){"use strict";var i=n(2831);class o{constructor(){return o.instance?o.instance:(o.instance=this,this)}createBox({title:e,message:t,type:n},o){let s=document.createElement("section");s.className="udn-box";let r=document.createElement("div");r.className="udn-box__container";let a=document.createElement("h2");if(a.className="udn-box__title",a.textContent=e||"未知錯誤",r.appendChild(a),void 0!==t){let e=document.createElement("div");e.innerHTML=t,e.className="udn-box__content",r.appendChild(e)}let c=document.createElement("div");c.className="udn-box__button btn-holder btn-holder--center";let l=document.createElement("button");if(l.className="btn btn-box btn-red btn-ripple",l.textContent="confirm"===n?"取消":"確認",l.addEventListener("click",(e=>{e.preventDefault(),d()})),"confirm"===n){let e=document.createElement("button");e.className="btn btn-box btn-blue btn-ripple",e.textContent="確定",e.addEventListener("click",(e=>{e.preventDefault(),d(),o()})),c.appendChild(e)}function d(){i.A.removeClass("alert-open"),setTimeout((()=>{s.parentNode.removeChild(s)}),1e3)}document.addEventListener("keydown",(function e(t){"Escape"===t.key&&(d(),document.removeEventListener("keydown",e))})),c.appendChild(l),r.appendChild(c),s.appendChild(r),document.body.appendChild(s)}alert({title:e,message:t}){i.A.setClass("alert-open"),this.createBox({title:e,message:t,type:"alert"})}confirm({title:e,message:t},n){i.A.setClass("alert-open"),this.createBox({title:e,message:t,type:"confirm"},n)}}const s=new o;t.A=s},6613:function(e,t,n){"use strict";var i=n(8172);class o{constructor(){return o.instance?o.instance:(o.instance=this,this.timeoutHandler=null,this.counter=0,this)}start(){return this.counter>=3?(i.A.alert({title:"警告",message:'<img src="//j.udn.com.tw/img/emoticons_10.gif" class="icon">深呼吸，放慢動作<br>請勿在短時間內操作同一功能唷～'}),!1):(this.counter++,this.timer(),!0)}timer(){clearTimeout(this.timeoutHandler),this.timeoutHandler=setTimeout((()=>{this.counter=0}),3e3)}}const s=new o;t.A=s},3503:function(e,t,n){"use strict";n.d(t,{J4:function(){return s},Tb:function(){return r},pl:function(){return a}});var i=n(2516),o=n.n(i);async function s(e,t={},n={},i="json"){const s=Object.entries(t).map((e=>`${e[0]}=${e[1]}`)).join("&");return o()(`${e}?${s}`,{method:"GET",...n}).then((e=>e[i]()))}async function r(e,t={},n="POST",i,s="json"){const r=JSON.stringify(t);return o()(e,{method:n,body:r,headers:{"Content-Type":"application/json"},...i}).then((e=>e[s]()))}async function a(e,t={},n="POST",i,s="json"){let r=c(t);Object.entries(t).map((([e,t])=>encodeURIComponent(e)+"="+encodeURIComponent(t))).join("&");return o()(e,{method:n,headers:{"Content-Type":"application/x-www-form-urlencoded"},body:r,...i}).then((e=>e[s]())).catch((e=>({state:!1,message:e})))}function c(e,t,n=[]){if("object"==typeof e)for(let i in e)c(e[i],t?t+"[]":i,n);else n.push(t+"="+encodeURIComponent(e));return n.join("&")}},9776:function(e,t,n){"use strict";n.d(t,{$5:function(){return c},Cj:function(){return w},Kt:function(){return r},Kx:function(){return g},R3:function(){return d},RX:function(){return p},Ri:function(){return u},Rj:function(){return m},X0:function(){return b},es:function(){return v},pE:function(){return y},pM:function(){return f},se:function(){return l},sg:function(){return a},y0:function(){return h}});var i=n(5015),o=(n(8172),n(2299)),s=n.n(o);const r=()=>{const e=void 0!==window.pageXOffset||void 0,t="CSS1Compat"===(document.compatMode||"");return e?window.pageYOffset:t?document.documentElement.scrollTop:document.body.scrollTop},a=(e,t)=>{let n=null;return(...i)=>{n&&clearTimeout(n),n=setTimeout((()=>{e(...i)}),t)}},c={getter:(e,t)=>{try{let n=document.querySelector(`meta[${e}="${t}"]`);return n?n.getAttribute("content"):""}catch(e){return""}}},l=(e,t)=>{t=null==t?1:t;const n=null==e?0:e.length;if(!n||t<1)return[];t=t>n?n:t;let i=-1;const o=n-1,s=((e,t)=>{let n=-1;const i=e.length;for(t||(t=new Array(i));++n<i;)t[n]=e[n];return t})(e);for(;++i<t;){const e=i+Math.floor(Math.random()*(o-i+1)),t=s[e];s[e]=s[i],s[i]=t}return((e,t,n)=>{let i=null==e?0:e.length;if(!i)return[];(t=null==t?0:t)<0&&(t=-t>i?0:i+t),(n=(n=void 0===n?i:n)>i?i:n)<0&&(n+=i),i=t>n?0:n-t>>>0,t>>>=0;let o=-1;const s=new Array(i);for(;++o<i;)s[o]=e[o+t];return s})(s,0,t)},d=e=>{for(let t=e.length-1;t>0;t--){const n=Math.floor(Math.random()*(t+1));[e[t],e[n]]=[e[n],e[t]]}return e};function u(e){var t=("; "+document.cookie).split("; "+e+"=");if(2==t.length)return t.pop().split(";").shift()}function m(){let e=parseInt(c.getter("name","cate_id"))===i.VIP_ID?"udnvip":"news";if(p())return`https://member.udn.com/member/login.jsp?site=${e}&again=y&redirect=${window.location.href}`;let t=new URL(window.location.href),n=t.origin+t.pathname;return e=window.innerWidth>i.BREAK_POINT.tablet?"news":"m_news",`https://member.udn.com/member/login.jsp?site=${e}&again=y&redirect=${n}`}const p=(e=/MSIE|Trident/)=>{const t=window.navigator.userAgent;return e.test(t)};const f=()=>parseInt(c.getter("name","cate_id"))===i.VIP_ID,h=()=>{if(document.body.classList.contains("menu-stick"))return;const e=document.querySelector(".header"),t=document.querySelector(".header-wrapper"),n=e.offsetTop+t.clientHeight;return window.__UDN__=window.__UDN__||{},window.__UDN__.menuTop=n,n};function g(e,t){return e.className.split(" ").indexOf(t)>=0||e.parentElement&&g(e.parentNode,t)}function y(e,t=1e3){const n=t/1e3;e.style.transition="all "+n+"s ease-in-out",e.style.visibility="hidden",e.style.opacity=0,e.style.transform="translateX(-50vw)",setTimeout((function(){e.parentNode.removeChild(e)}),t)}function v(){return{width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}}function b(){let e=s().get("_ga"),t=e?e.split("."):[];return t.splice(0,2),t.length?t.join("."):"__"}function w(e){const t=new Date(e),n=new Date,i=Date.parse(t)-Date.parse(n),o=Math.floor(i/1e3%60),s=Math.floor(i/1e3/60%60),r=Math.floor(i/36e5%24);return{total:i,days:Math.floor(i/864e5),hours:r,minutes:s,seconds:o,date:t,now:n}}},8856:function(e,t,n){"use strict";n.d(t,{CC:function(){return u},FL:function(){return g},Gm:function(){return f},QY:function(){return y},hm:function(){return h},sp:function(){return v},zE:function(){return d}});var i=n(9776),o=n(581),s=n(2092),r=n(5015);let a,c;async function l(){if(!a){i.RX&&await n.e(462).then(n.t.bind(n,9670,23));const e=await n.e(28).then(n.bind(n,539));a=e.html,c=e.render}}async function d(e,t){return async function(){await l();let n=await Promise.all(e.map((async e=>{const t=e.hasOwnProperty("vote")?{vote:e.vote}:{},n=e.hasOwnProperty("collectionId")?{collectionId:e.collectionId}:{},i=e.hasOwnProperty("cateLink")?{cate:{href:e.cateLink,title:e.cateTitle}}:{};return await p({data:{href:e.titleLink,title:e.title,content_level:e.content_level,story_list:e.story_list,source:e.url,video:void 0!==e.video&&e.video,image:{width:300,height:200},paragraph:e.hasOwnProperty("paragraph")?e.paragraph:"",time:e.time,view:e.hasOwnProperty("view")?e.view:"",...t,...n,...i}})})));c(n,t)}}async function u({urlPrefix:e,list:t,feat:n,isIndex:i,json5:o}){await l();const{img:r,title:a,link:d,settings:u,articleId:p,story_list:f,content_level:h}=t,g=n.querySelector(".story-list__image--holder"),y=n.querySelector(".story-list__text h3"),v=n.querySelector(".btn-setting"),b=d+"?from=ddd-umaylikenews_ch2"+e;n.querySelector(".btn-like").dataset.id=p;const w=document.createElement("a");w.href=b,w.textContent=a,w.title=a,w.dataset.story_list=f||"list_猜你喜歡",w.dataset.content_level=h,y.appendChild(w),g.href=b,g.title=a,g.dataset.story_list=f||"list_猜你喜歡",g.dataset.content_level=h,n.dataset.id=p,w.addEventListener("click",(()=>{(0,s.l)(p)})),c(await m({source:r,width:300,height:200}),g),v.dataset.settings=o.stringify(u)}async function m({source:e,width:t,media:n=!1,height:i}){await l();e.includes("pgw.udn.com")||(e=`//pgw.udn.com.tw/gw/photo.php?u=${e}`);return a`
+    <picture>
+      ${n?n.map((n=>a`
+        <source
+          media="(min-width: ${n}px)"
+          srcset="${e}&w=${2*t}&nt=1"
+          type="image/webp"
+        />
+        <source
+          media="(min-width: ${n}px)"
+          srcset="${e}&w=${2*t}"
+          type="image/jpeg"
+        />
+      `)):a``}
+      <source srcset="${e}${"&"}w=${t}&nt=1" type="image/webp" />
+      <source srcset="${e}${"&"}w=${t}" type="image/jpeg" />
+
+      <img src="${e}${"&"}w=${t}" loading="lazy" alt="" />
+    </picture>
+  `}async function p({data:e}){return a`
+    <div
+      class="story-list__news ${e.video?"story-list__video":""} ${e.hasOwnProperty("vote")?"story-list__vote":""}"
+    >
+      <div class="story-list__image">
+        <a
+          href="${e.href}"
+          title="${e.title}"
+          data-content_level="${e.content_level}"
+          data-story_list="${e.story_list}"
+          class="story-list__image--holder"
+        >
+          ${await m({source:e.source,width:e.image.width,height:e.image.height})}
+        </a>
+      </div>
+      <div class="story-list__text">
+        <h2>
+          <a
+            href="${e.href}"
+            title="${e.title}"
+            data-content_level="${e.content_level}"
+            data-story_list="${e.story_list}"
+            >${e.title}</a
+          >
+        </h2>
+
+        ${e.hasOwnProperty("vote")?a`
+              <div class="story-list__info">
+                <div class="vote-rules">
+                  <span class="time-left"
+                    >剩餘時間：
+                    ${(0,i.Cj)(e.vote.endTime).days<0?"已結束":(0,i.Cj)(e.vote.endTime).days+"天 "+(0,i.Cj)(e.vote.endTime).hours+"小時"}
+                  </span>
+                  <span class="total"
+                    >${(0,i.Cj)(e.vote.endTime).days<0?"總投票數":"目前總投票數"}：
+                    ${e.vote.total}
+                  </span>
+                </div>
+
+                <div class="btn-holder">
+                  <a href="${e.href}" class="btn btn-blue btn-vote">
+                    ${(0,i.Cj)(e.vote.endTime).days<0?"看結果":"投票"} <i class="i-vote2"></i
+                  ></a>
+                </div>
+              </div>
+            `:a`
+              ${e.hasOwnProperty("paragraph")?a`
+                    <p>
+                      <a
+                        href="${e.href}"
+                        title="${e.title}"
+                        data-content_level="${e.content_level}"
+                        data-story_list="${e.story_list}"
+                        >${e.paragraph}</a
+                      >
+                    </p>
+                  `:""}
+
+              <div class="story-list__info">
+                ${e.hasOwnProperty("feature")?a`
+                      <div class="feature-guess__tools">
+                        <span
+                          class="story-list__setting btn btn-icon btn-setting btn-setting--ajax"
+                          data-settings="${e.feature}"
+                          role="button"
+                          @click=${s.$}
+                          aria-label="最愛設定"
+                        ></span>
+                      </div>
+                    `:""}
+                ${e.hasOwnProperty("collectionId")?a`
+                      <span
+                        class="btn btn-icon btn-bookmark--cancel"
+                        role="button"
+                        aria-label="移除收藏"
+                        data-id="${e.collectionId}"
+                        @click=${t=>{t.preventDefault(),(0,o.He)(t,e.href)}}
+                      ></span>
+                    `:""}
+                ${r=e.view,""===r||void 0===r||isNaN(r)?a``:a`
+        <span class="story-list__view"><i class="i-eye-3"></i>${r}</span>
+      `} ${n=e.cate,n?a`
+        <a
+          href="${n.href}"
+          title="${n.title}"
+          class="story-list__cate btn btn-blue"
+          >${n.title}</a
+        >
+      `:a``}
+                ${t=e.time,t?a`
+        <time class="story-list__time" datetime="${t.dateTime}"
+          >${t.date}</time
+        >
+      `:a``}
+              </div>
+            `}
+      </div>
+    </div>
+  `;var t,n,r}async function f(e,t){await l();const n=a` ${e.hasOwnProperty("recommendation")?a`
+        <div class="navigation-submenu__footer__recomendation">
+          ${e.recommendation.map((e=>a`
+              <a class="arrow-icon" href="${e.link}" title="${e.title}"
+                >${e.title}</a
+              >
+            `))}
+        </div>
+      `:""} ${e.hasOwnProperty("ads")?a`
+        <div class="navigation-submenu__footer__issues">
+          ${e.ads.map((e=>a`
+              <a
+                class="list-ellipsis"
+                target="_blank"
+                title="${e.title}"
+                href="${e.link}"
+                >${e.title}</a
+              >
+            `))}
+        </div>
+      `:""} `;c(n,t)}async function h(e,t){await l();let n=await Promise.all(e.map((async(e,t)=>a`
+        <section
+          class="context-box ${0===t?"active":""}"
+          data-index="${t}"
+        >
+          <header class="context-box__header">
+            <h3 class="context-box__title">${e.title}</h3>
+            <a
+              class="btn context-box__more"
+              href="${e.href}"
+              title="${e.title}"
+            ></a>
+          </header>
+          ${await(async e=>void 0===e.thumb?"":a`
+      <div class="context-box__content">
+        <a
+          class="thumb-list thumb-rec"
+          href="${e.thumb.link}"
+          title="${e.thumb.title}"
+          data-story_list="${e.thumb.story_list}"
+          data-content_level="${e.thumb.content_level}"
+        >
+          ${await m({source:e.thumb.img,width:160,height:100})}
+          <h4 class="thumb-list__title">${e.thumb.title}</h4>
+        </a>
+        ${e.lists.map((e=>a`
+            <a
+              href="${e.link}"
+              title="${e.title}"
+              class="list-ellipsis ${e.focus?"text-orange":""}"
+              data-story_list="${e.story_list}"
+              data-content_level="${e.content_level}"
+              >${e.title}</a
+            >
+          `))}
+      </div>
+    `)(e)}
+        </section>
+      `)));c(n,t)}async function g(e,t,n,i=!1){await l();const o={handleEvent(e){n()},capture:!0};let s={width:300,height:200},{logo:r,ads:d,news:u,text:m}=e,f=a`
+    <div class="udn-idle__container">
+      <header class="udn-idle__header">
+        <a href="${r.href}" class="udn-idle__logo" title="${r.title}">
+          <img
+            src="${r.source}"
+            loading="lazy"
+            alt="udn-logo"
+            class="udn-idle__logo"
+          />
+        </a>
+
+        <div class="btn close-btn" aria-label="Close" @click=${o}>
+          <i class="i-close"></i>
+        </div>
+      </header>
+
+      <div class="udn-idle__content udn-idle__content--text context-box">
+        <header class="context-box__header">
+          <h3 class="context-box__title">最新文章</h3>
+        </header>
+        <div class="context-box__content story-list__holder">
+          ${m.map((e=>a`<div class="story-list__news">
+              <h2>
+                <a
+                  data-content_level="${e.content_level}"
+                  data-story_list="${e.story_list}"
+                  href="${e.href}"
+                  title="${e.title}"
+                  >${e.title}</a
+                >
+              </h2>
+            </div>`))}
+          <div class="udn-ads" id="${d[1]}"></div>
+        </div>
+      </div>
+
+      <div class="udn-idle__content udn-idle__content--image context-box">
+        <div class="story-list__holder">
+          ${await p({data:{...u[0],image:{...s}}})}
+          ${await p({data:{...u[1],image:{...s}}})}
+          <div class="udn-ads" id="${d[0]}"></div>
+        </div>
+      </div>
+    </div>
+  `;c(f,t)}async function y({fixed:e,mobile:t,menu:n,current:i,endMenu:o,ads:s},d){await l();let u=a`
+    <a
+      href="/news/index"
+      class="navigation-list navigation-fixed home"
+      title="回聯合新聞網首頁"
+      ><img alt="udn logo" src="/static/img/logo.svg?20200206"
+    /></a>
+    ${e.map((e=>a`
+        <a
+          class="navigation-list navigation-fixed ${e.id===i?"active":""} ${(0,r.IS_VIP)(e.id)?"navigation-list--vip":""} ${"simple"===e.id?"navigation--simple":""}"
+          data-id="${e.id}"
+          title="${e.title}"
+          href="${e.href}"
+          >${e.title}</a
+        >
+      `))}
+    ${window.innerWidth<r.BREAK_POINT.tablet&&t?t.map((e=>a`
+            <a
+              class="navigation-list navigation-fixed ${e.id===i?"active":""} navigation-list--mobile"
+              data-id="${e.id}"
+              title="${e.title}"
+              href="${e.href}"
+              >${e.title}</a
+            >
+          `)):""}
+    ${n[0].map((e=>a`
+        <a
+          class="navigation-list ${e.id===i?"active":""} ${(0,r.IS_VIP)(e.id)?"navigation-list--vip":""} ${"simple"===e.id?"navigation--simple":""}"
+          data-id="${e.id}"
+          title="${e.title}"
+          href="${e.href}"
+          >${e.title}</a
+        >
+      `))}
+    ${function(e){return e?a`
+          <a
+            class="navigation-list navigation-fixed"
+            data-id="${e.id}"
+            href="${e.href}"
+            title="${e.title}"
+            target="_blank"
+            >${e.title}</a
+          >
+        `:""}(o)}
+    ${n[1].map((e=>a`
+        <a
+          class="navigation-list ${e.id===i?"active":""}"
+          data-id="${e.id}"
+          href="${e.href}"
+          title="${e.title}"
+          >${e.title}</a
+        >
+      `))}
+    ${s.map((e=>a`
+        <a
+          class="navigation-list navigation-fixed navigation--sales"
+          href="${e.href}"
+          title="${e.title}"
+          >${e.title}</a
+        >
+      `))}
+  `;c(u,d)}async function v(e,t){await l();const n=a`
+    ${e.map((e=>{return a`
+        <section class="discuss-board__list">
+          <div class="discuss-details">
+            <div class="discuss-details__author">
+              <a
+                href="${e.user.url}"
+                target="_blank"
+                title="${e.user.nickname}"
+                >${e.user.nickname}</a
+              >
+              發表於 <time datetime="${e.time.dateTime}">${e.time.date}</time>
+            </div>
+            <div class="discuss-details__count"># ${e.id}樓</div>
+            <div class="discuss-details__text">
+              ${e.hasOwnProperty("image")?(t=e.image,t?a`
+        <div class="discuss-details__emoji">
+          <img src="//j.udn.com.tw/img/${t}" alt="" />
+        </div>
+      `:a``):""}
+              <p>${function(e){const t=e.split(/(?:\r\n|\r|\n)/g);return t.map(((e,n)=>n===t.length-1?a`${e}`:a` ${e} <br /> `))}(e.content)}</p>
+            </div>
+          </div>
+        </section>
+      `;var t}))}
+  `;c(n,t)}},9966:function(e,t,n){"use strict";var i=n(1524),o=n.n(i);class s{constructor(){return s.instance?s.instance:(s.instance=this,this.notifier=o(),this.config={api:{type:"danger",icon:"https://j.udn.com.tw/img/emoticons_09.gif"},success:{type:"success",icon:"https://j.udn.com.tw/img/emoticons_04.gif"}},this)}showNotification({title:e,message:t="不明錯誤",nType:n="api",timeout:i=4e3}){let{type:o,icon:s}=this.config[n];return this.notifier.show(e,t,o,s,i)}hideNotification(){o().hide(this.notifier)}}const r=new s;t.A=r},2831:function(e,t){"use strict";class n{constructor(){return n.instance?n.instance:(n.instance=this,this.classes=[],this)}getClasses(){return this.classes}setClasses(e=[]){return this.classes=[...this.classes,...e],this.classes.forEach((e=>{document.body.classList.contains(e)||document.body.classList.add(e)})),this.classes}setClass(e){return document.body.classList.add(e),this.classes}removeClass(e){return this.classes=this.classes.filter((t=>t!==e)),document.body.classList.remove(e),this.classes}removeAllClasses(){return this.classes.forEach((e=>{document.body.classList.remove(e)})),this.classes=[],this.classes}}const i=new n;t.A=i},9841:function(e,t,n){"use strict";var i=n(9776);t.A=function({parentClassName:e,callback:t}){const n=o=>{(0,i.Kx)(o.target,e)||(document.removeEventListener("click",n),t())};return{register:()=>{document.addEventListener("click",n)},destroy:()=>{t(),document.removeEventListener("click",n)}}}},4099:function(e,t,n){"use strict";n.d(t,{BL:function(){return a},C_:function(){return u},F5:function(){return i},X:function(){return d},f8:function(){return m},ff:function(){return r},nY:function(){return o},uY:function(){return l},v$:function(){return c},yE:function(){return s}});let i="loading",o="idle",s="ready",r="error",a="finished",c="fetching",l="invalid",d="unchecked",u="opened",m="open-loading";t.Ay=(e,t=o,n=!1,s)=>{let r=t,c=null,l=n;void 0!==s||e.className;return e.dataset.state=r,{dispatchAction:t=>{c=r,e.dataset.state=t,r=t},get getState(){return r},get getPrevState(){return c},get isLoading(){return r==i},get isEnd(){return r===a},debugging(e){l=e}}}}},s={};function r(e){var t=s[e];if(void 0!==t)return t.exports;var n=s[e]={exports:{}};return o[e].call(n.exports,n,n.exports,r),n.exports}r.m=o,e=[],r.O=function(t,n,i,o){if(!n){var s=1/0;for(d=0;d<e.length;d++){n=e[d][0],i=e[d][1],o=e[d][2];for(var a=!0,c=0;c<n.length;c++)(!1&o||s>=o)&&Object.keys(r.O).every((function(e){return r.O[e](n[c])}))?n.splice(c--,1):(a=!1,o<s&&(s=o));if(a){e.splice(d--,1);var l=i();void 0!==l&&(t=l)}}return t}o=o||0;for(var d=e.length;d>0&&e[d-1][2]>o;d--)e[d]=e[d-1];e[d]=[n,i,o]},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,{a:t}),t},n=Object.getPrototypeOf?function(e){return Object.getPrototypeOf(e)}:function(e){return e.__proto__},r.t=function(e,i){if(1&i&&(e=this(e)),8&i)return e;if("object"==typeof e&&e){if(4&i&&e.__esModule)return e;if(16&i&&"function"==typeof e.then)return e}var o=Object.create(null);r.r(o);var s={};t=t||[null,n({}),n([]),n(n)];for(var a=2&i&&e;"object"==typeof a&&!~t.indexOf(a);a=n(a))Object.getOwnPropertyNames(a).forEach((function(t){s[t]=function(){return e[t]}}));return s.default=function(){return e},r.d(o,s),o},r.d=function(e,t){for(var n in t)r.o(t,n)&&!r.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},r.f={},r.e=function(e){return Promise.all(Object.keys(r.f).reduce((function(t,n){return r.f[n](e,t),t}),[]))},r.u=function(e){return"static/js/"+({28:"lit-html",195:"udn-baseball",251:"udn-vote",315:"udn-gallery",379:"udn-feature",462:"webcomponents-template",518:"JSON5",587:"sortable",719:"udn-discuss",742:"udn-timeline",745:"udn-social-sidebar",760:"udn-tab",802:"udn-submenu",927:"udn-audio"}[e]||e)+".bundle.js?tsb=1723688645845"},r.miniCssF=function(e){},r.g=function(){if("object"==typeof globalThis)return globalThis;try{return this||new Function("return this")()}catch(e){if("object"==typeof window)return window}}(),r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i={},r.l=function(e,t,n,o){if(i[e])i[e].push(t);else{var s,a;if(void 0!==n)for(var c=document.getElementsByTagName("script"),l=0;l<c.length;l++){var d=c[l];if(d.getAttribute("src")==e){s=d;break}}s||(a=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,r.nc&&s.setAttribute("nonce",r.nc),s.src=e),i[e]=[t];var u=function(t,n){s.onerror=s.onload=null,clearTimeout(m);var o=i[e];if(delete i[e],s.parentNode&&s.parentNode.removeChild(s),o&&o.forEach((function(e){return e(n)})),t)return t(n)},m=setTimeout(u.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=u.bind(null,s.onerror),s.onload=u.bind(null,s.onload),a&&document.head.appendChild(s)}},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.p="/",function(){var e={702:0,3:0};r.f.j=function(t,n){var i=r.o(e,t)?e[t]:void 0;if(0!==i)if(i)n.push(i[2]);else{var o=new Promise((function(n,o){i=e[t]=[n,o]}));n.push(i[2]=o);var s=r.p+r.u(t),a=new Error;r.l(s,(function(n){if(r.o(e,t)&&(0!==(i=e[t])&&(e[t]=void 0),i)){var o=n&&("load"===n.type?"missing":n.type),s=n&&n.target&&n.target.src;a.message="Loading chunk "+t+" failed.\n("+o+": "+s+")",a.name="ChunkLoadError",a.type=o,a.request=s,i[1](a)}}),"chunk-"+t,t)}},r.O.j=function(t){return 0===e[t]};var t=function(t,n){var i,o,s=n[0],a=n[1],c=n[2],l=0;if(s.some((function(t){return 0!==e[t]}))){for(i in a)r.o(a,i)&&(r.m[i]=a[i]);if(c)var d=c(r)}for(t&&t(n);l<s.length;l++)o=s[l],r.o(e,o)&&e[o]&&e[o][0](),e[o]=0;return r.O(d)},n=self.webpackChunk=self.webpackChunk||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))}(),r.O(void 0,[121,178],(function(){return r(1001)}));var a=r.O(void 0,[121,178],(function(){return r(9706)}));a=r.O(a)}();

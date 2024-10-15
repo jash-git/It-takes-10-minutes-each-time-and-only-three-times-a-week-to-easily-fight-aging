@@ -1,0 +1,13 @@
+function extraInit(){
+  const allPrices = document.querySelectorAll('.offer-price-value')
+
+  allPrices.forEach(price => {
+    const priceValue = price.childNodes[1].nodeValue.trim().replace(/\s+/g, '')
+
+    if(Number(priceValue) < 10000){
+      price.childNodes[1].nodeValue = price.childNodes[1].nodeValue.trim().replace(/\s+/g, '')
+    }else{
+      return
+    }
+  })
+}
